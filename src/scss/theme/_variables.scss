@@ -1,5 +1,5 @@
 /* prettier-ignore */
-
+@use 'sass:math';
 @import 'colors';
 $variable-prefix: 'ensurance-';
 // Grid containers
@@ -160,8 +160,8 @@ $font-size-base: 1rem !default;
 $font-sizes: () !default;
 $font-sizes: map-merge(
   (
-    '-2': (1 / pow($type-scale, 2)) * $font-size-base,//11.11
-    '-1':(1 / $type-scale) * $font-size-base,//13.33
+    '-2': math.div(1 , pow($type-scale, 2)) * $font-size-base,//11.11
+    '-1': math.div(1 , $type-scale) * $font-size-base,//13.33
     0: $font-size-base,//16
     1: pow($type-scale, 1) * $font-size-base, 
     2: pow($type-scale, 2) * $font-size-base,
@@ -412,7 +412,7 @@ $card-spacer-y: map_get($spacers, 5) !default;
 $card-spacer-x: map_get($spacers, 5) !default;
 $card-title-spacer-y: map_get($spacers, 3) !default;
 $card-border-width: 1px !default;
-$card-border-radius: 3.125rem !important;
+$card-border-radius: 3.125rem !default;
 $card-border-color: var(--#{$variable-prefix}card-border-color) !default;
 $card-cap-bg: var(--#{$variable-prefix}card-cap-bg) !default;
 $card-cap-padding-y: $spacer !default;

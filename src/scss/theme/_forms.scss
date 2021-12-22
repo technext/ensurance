@@ -80,9 +80,15 @@ label{
     background-color: transparent;
     color: $gray-500;
     border-bottom: 1px solid #5edcd4c7;
+    @if $enable-shadows {
+      @include box-shadow($form-select-box-shadow, $form-select-focus-box-shadow);
+    } @else {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      box-shadow: none;
+    }
   }
 }
 
-.form-select{
-  padding: 0;
-}
+// .form-select{
+//   padding: 0;
+// }
