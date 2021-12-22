@@ -1,0 +1,119 @@
+append variables
+  -
+    var insurance= [
+      {
+        image:'car.png',
+        hoverImage:'car-hover.png',
+      },
+      {
+        image:'home.png',
+        hoverImage:'home-hover.png',
+      },
+      {
+        image: 'paw.png',
+        hoverImage: 'paw-hover.png',
+      },
+      {
+        image: 'plane.png',
+        hoverImage: 'plane-hover.png',
+      },
+     
+    ];
+  -
+    var services = [
+      {
+        icon:'support.png',
+        title:'24x7 Support',
+        text:'Choose the location where your food will be delivered.'
+      },
+      {
+        icon:'edit.png',
+        title:'Easy Claim System',
+        text:'Check over hundreds of menus to pick your favorite food'
+      },
+      {
+        icon:'money.png',
+        title:'Easy installments',
+        text:`It's quick, safe, and simple. Select several methods of payment`,
+      },
+       {
+        icon:'security.png',
+        title:'Strongly Secured',
+        text:'Food is made and delivered directly to your home.',
+      },
+    
+    ]  
+
+mixin Service(config)
+  .col-sm-6.col-md-3.mb-6
+    img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='50' alt='...')
+    h4.mt-4.fw-normal.text-200=config.title
+    p.mb-md-0=config.text
+mixin Icons(config)
+  .icon-box
+    img.car-insurance-icon(src=`${CWD}assets/img/icons/${config.image}` width="60"  alt='...' )  
+    img.car-insurance-icon-hover(src=`${CWD}assets/img/icons/${config.hoverImage}` width="60" alt='...' )
+
+mixin CarInsurance
+  section.overflow-hidden
+    +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': 'right center', 'background-size': 'auto'} }, className: 'horizontal-bg' })
+    +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left center', 'background-size': 'auto'} }, className: 'vertical-bg' })
+    .container
+      .row.flex-center
+        .col-lg-9
+          .d-flex.align-items-start
+            .nav.flex-column.nav-tab#nav-tab(role='tablist' aria-orientation='vertical')
+              btn.circle-hover-wrapper.nav-link.mb-4.active#nav-car-tab(data-bs-toggle='tab' data-bs-target='#nav-car' type='button' role='tab' aria-controls='nav-car' aria-selected='true') 
+                +Icons(insurance[0])
+                 
+              btn.circle-hover-wrapper.nav-link.mb-4#nav-home-tab(data-bs-toggle='tab' data-bs-target='#nav-home' type='button' role='tab' aria-controls='nav-home' aria-selected='false') 
+                +Icons(insurance[1])
+
+              btn.circle-hover-wrapper.nav-link.mb-4#nav-paw-tab(data-bs-toggle='tab' data-bs-target='#nav-paw' type='button' role='tab' aria-controls='nav-paw' aria-selected='false') 
+                +Icons(insurance[2])
+
+              btn.circle-hover-wrapper.nav-link.mb-4#nav-plane-tab(data-bs-toggle='tab' data-bs-target='#nav-plane' type='button' role='tab' aria-controls='nav-plane' aria-selected='false') 
+                +Icons(insurance[3])
+                  
+            .tab-content#nav-tabContent
+              .tab-pane.fade.show.active#nav-car(role='tabpanel' aria-labelledby='nav-car-tab') 
+                .row.align-items-center.offset-1
+                  .col-6
+                    h2.text-light Car Insurance
+                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
+                      |Discover the most appropriate fit for you and your Family.
+                  .col-6
+                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+              .tab-pane.fade#nav-home(role='tabpanel' aria-labelledby='nav-home-tab') 
+                .row.align-items-center.offset-1 
+                  .col-6
+                    h2.text-light Car Insurance
+                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
+                      |Discover the most appropriate fit for you and your Family.
+                  .col-6
+                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+              .tab-pane.fade#nav-paw(role='tabpanel' aria-labelledby='nav-paw-tab')
+                .row.align-items-center.offset-1
+                  .col-6
+                    h2.text-light Car Insurance
+                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
+                      |Discover the most appropriate fit for you and your Family.
+                  .col-6
+                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+              .tab-pane.fade#nav-plane(role='tabpanel' aria-labelledby='nav-plane-tab') 
+                .row.align-items-center.offset-1 
+                  .col-6
+                    h2.text-light Car Insurance
+                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
+                      |Discover the most appropriate fit for you and your Family.
+                  .col-6
+
+                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+
+      .row.offset-3
+        .col-xl-12
+          .mb-3.mb-md-5.mt-9
+            h2.text-light Best Services
+          .row
+            each service in services 
+              +Service(service)                    

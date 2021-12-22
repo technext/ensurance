@@ -1,0 +1,71 @@
+mixin HeroSection
+  section.py-0
+    +Background({ image: `${CWD}assets/img/illustrations/bg.png`, attrs: { style: { 'background-position': 'left center', 'background-size': 'auto'} }, className: '' })
+    .container
+      .row.align-items-center.min-vh-100
+        .col-md-7.col-xl-8.col-xxl-7.pt-9.text-md-start.text-center
+          h1.display-2.text-light.fw-thin We provide the best 
+            br.d-none.s-xxl-block
+            | value 
+            strong insurance 
+          p.fs-2.text-400 Simple Steps You Can Take to Improve Your 
+            br
+            | Financial Well-Being for the rest of Your Life  
+          a.btn.btn-primary.btn-ensurance.mt-5(href='#!')
+            i.fas.fa-chevron-right.fa-xs.btn-icon
+            span.btn-text Learn more
+            
+        .col-md-5.col-xl-4.col-xxl-5.px-xxl-0
+          .card.card-bg.shadow
+            .card-body.px-4.py-4
+              h2.text-100.text-center Get a Quote
+              form.mb-3
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingName(type='text' placeholder='name')
+                  label(for='floatingName') Your name
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingInput(type='tel' placeholder='name@example.com')
+                  label(for='floatingInput') Phone
+                .form-floating.mb-3
+                  input.form-control.input-box.form-ensurance-header-control#floatingEmail(type='email' placeholder='name@example.com')
+                  label(for='floatingEmail') Email
+                .form-floating.mb-3
+                  select.form-select.form-ensurance-header-select#floatingSelect(aria-label='Floating label select example')
+                    //- option(selected) Open this select menu
+                    option(value='1') One
+                    option(value='2') Two
+                    option(value='3') Three
+                  //- label(for='floatingSelect') Insurance Category
+                .form-floating.mb-3
+                  textarea.form-control.input-box.form-ensurance-header-control#floatingTextarea(placeholder='Leave a comment here')
+                  label(for='floatingTextarea') Comments
+                .col-12.d-grid  
+                  button.btn.btn-primary.rounded-pill(type='submit') Get Quote
+              
+                //- .form-formfloating.row.g-4.mt-5
+                //-   .col-12
+                //-     .input-group-ensurance-icon
+                //-       label.form-label.visually-hidden(for='inputAddress1') Address 1
+                //-       input.form-control.input-box.form-ensurance-header-control#inputAddress1(type='text' placeholder='From where')
+                //-       span.nav-link-icon.text-800.fs--1.input-box-ensurance-icon
+                //-         i.fas.fa-map-marker-alt
+                //-   .col-12
+                //-     .input-group-ensurance-icon
+                //-       label.form-label.visually-hidden(for='inputAddress2') Address 2
+                //-       input.form-control.input-box.form-ensurance-header-control#inputAddress2(type='text' placeholder='To where')  
+                //-       span.nav-link-icon.text-800.fs--1.input-box-ensurance-icon
+                //-         i.fas.fa-map-marker-alt 
+                 
+                //-   .col-12
+                //-     .input-group-ensurance-icon
+                //-       label.form-label.visually-hidden(for='inputPersonOne') Person
+                //-       select#inputPersonOne.form-select.form-ensurance-header-select.input-box
+                //-         option(selected) 2 Adults
+                //-         option 2 Adults 1 children
+                //-         option 2 Adults 2 children
+                //-       span.nav-link-icon.text-800.fs--1.input-box-ensurance-icon
+                //-           i.fas.fa-user 
+                //-   .col-12.d-grid
+                //-     button.btn.btn-primary.rounded-pill(type='submit') Get Quote
+             
+

@@ -1,0 +1,55 @@
+.icon-box{
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $secondary;
+  margin-bottom: 15px;
+  margin-left:auto;
+  margin-right:auto;
+  .car-insurance-icon-hover{
+    display:none;
+  }
+  .car-insurance-icon{
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  
+  &:hover{
+    .car-insurance-icon{
+      display: none;
+    }
+    .car-insurance-icon-hover{
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+}
+
+.circle-hover-wrapper {
+  position: relative;
+  z-index: 999;
+  height:  100px;
+  width: 100px;
+  padding: 0;
+  &:hover{
+    z-index: 800;
+    &::before{
+      position: absolute;
+      content: '';
+      height: 100%;
+      width: 100%;
+      border: 1px solid $primary;
+      border-radius: 50%;
+      transform: scale(2);
+      pointer-events: none;
+      opacity: .7;
+    }
+  }
+}
+

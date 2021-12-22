@@ -1,0 +1,41 @@
+mixin Client(config)
+  .col-12
+    .card.text-white
+      .card-body.py-5
+        .d-md-flex.align-items-md-center.text-center.text-md-start.bg-secondary(style="border-radius: 250px 0 0 250px; background-color:")
+          img.img-fluid.me-4.me-md-3.me-lg-4.rounded-circle.fit-cover(src=`${CWD}assets/img/team/${config.userImage}` width="250" alt='')
+          .w-md-75.ms-md-8.py-5
+            h2.mb-0.fw-medium.text-white=config.name
+            p.fw-normal.mb-0.text-primary=config.designation
+            p.card-text.text-200.mt-3=config.text
+
+mixin Clients 
+  +Section.py-8
+    .row 
+      .col-12
+        h2.text-light.text-center Our Awesome Clients
+        #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel')
+          .carousel-inner
+            .carousel-item.active
+              .row.h-100
+                +Client({userImage: '1.jpg', title:'What our customer are saying',name:'Charlize Theron',designation:'Founder Circle',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})            
+            .carousel-item
+              .row.h-100
+                +Client({userImage: '2.jpg', title:'What our customer are saying',name:'Edward Newgate',designation:'Founder Circle',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})            
+            .carousel-item
+              .row.h-100
+                +Client({userImage: '3.jpg', title:'What our customer are saying',name:'Charlize Theron',designation:'Founder Circle',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})            
+          .row.flex-end-center.mt-5
+            .col-2.text-end.position-relative.z-index-2
+
+              button.carousel-control-prev(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='prev')
+                span.carousel-control-prev-icon(aria-hidden='true')
+                span.visually-hidden Previous
+              button.carousel-control-next(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide='next')
+                span.carousel-control-next-icon(aria-hidden='true')
+                span.visually-hidden Next
+  
+              .carousel-indicators
+                button.active(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='0' aria-current='true' aria-label='Slide 1')
+                button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='1' aria-label='Slide 2')
+                button(type='button' data-bs-target='#carouselExampleIndicators' data-bs-slide-to='2' aria-label='Slide 3')  
