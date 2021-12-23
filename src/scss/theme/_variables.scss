@@ -9,7 +9,6 @@ $variable-prefix: 'ensurance-';
 $container-max-widths: () !default;
 $container-max-widths: map-merge(
   (
-    xs: 0,
     sm: 576px,
     md: 768px,
     lg: 992px,

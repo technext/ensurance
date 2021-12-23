@@ -6,7 +6,7 @@
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-color: $secondary;
+  background-color: #224E8F;
   margin-bottom: 15px;
   margin-left:auto;
   margin-right:auto;
@@ -20,6 +20,7 @@
   }
   
   &:hover{
+    background-color: $secondary;
     .car-insurance-icon{
       display: none;
     }

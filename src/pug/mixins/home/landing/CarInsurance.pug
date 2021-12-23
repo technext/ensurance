@@ -56,11 +56,11 @@ mixin Icons(config)
 
 mixin CarInsurance
   section.overflow-hidden
-    +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': 'right center', 'background-size': 'auto'} }, className: 'horizontal-bg' })
-    +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left center', 'background-size': 'auto'} }, className: 'vertical-bg' })
-    .container
-      .row.flex-center
-        .col-lg-9
+    +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
+    +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
+    .container-lg
+      .row.flex-center.py-md-10
+        .col-12.mt-6
           .d-flex.align-items-start
             .nav.flex-column.nav-tab#nav-tab(role='tablist' aria-orientation='vertical')
               btn.circle-hover-wrapper.nav-link.mb-4.active#nav-car-tab(data-bs-toggle='tab' data-bs-target='#nav-car' type='button' role='tab' aria-controls='nav-car' aria-selected='true') 
@@ -77,13 +77,18 @@ mixin CarInsurance
                   
             .tab-content#nav-tabContent
               .tab-pane.fade.show.active#nav-car(role='tabpanel' aria-labelledby='nav-car-tab') 
-                .row.align-items-center.offset-1
-                  .col-6
-                    h2.text-light Car Insurance
-                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
-                      |Discover the most appropriate fit for you and your Family.
-                  .col-6
-                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+                .row.align-items-center.offset-1.g-5
+                  .col-md-6.col-xl-4.order-1.order-lg-0
+                    h2.text-light.mb-md-5 Car Insurance
+                    p.text-400 Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
+                      br
+                      .mt-3.text-400 Discover the most appropriate fit for you and your Family.
+                    a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
+                      span.fas.fa-chevron-right.fa-xs.btn-icon
+                      span.btn-text Learn more  
+                  .col-md-6.col-xl-8.text-end
+                    .img-shape
+                      img.feature-img(src=`${CWD}assets/img/gallery/car.png` alt='...')
               .tab-pane.fade#nav-home(role='tabpanel' aria-labelledby='nav-home-tab') 
                 .row.align-items-center.offset-1 
                   .col-6
@@ -107,12 +112,11 @@ mixin CarInsurance
                     p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
                       |Discover the most appropriate fit for you and your Family.
                   .col-6
-
                     img(src=`${CWD}assets/img/gallery/car.png` alt='...')
 
-      .row.offset-3
+      .row.offset-xl-2
         .col-xl-12
-          .mb-3.mb-md-5.mt-9
+          .mb-3.mb-md-5
             h2.text-light Best Services
           .row
             each service in services 
