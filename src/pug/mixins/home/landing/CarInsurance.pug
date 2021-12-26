@@ -36,83 +36,99 @@ append variables
         title:'Easy installments',
         text:`It's quick, safe, and simple. Select several methods of payment`,
       },
-       {
+      {
         icon:'security.png',
         title:'Strongly Secured',
         text:'Food is made and delivered directly to your home.',
       },
     
-    ]  
+    ] ;
+
+  -
+    var content = [
+      {
+        image:'car.png',
+        title:'Car Insurance',
+        textOne:`Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.`,
+        textTwo:`Discover the most appropriate fit for you and your Family.`,
+      },
+      {
+        image:'home.png',
+        title:'Home Insurance',
+        textOne:`Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.`,
+        textTwo:`Discover the most appropriate fit for you and your Family.`,
+      },
+      {
+        image:'pets.png',
+        title:'Pet Insurance',
+        textOne:`Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.`,
+        textTwo:`Discover the most appropriate fit for you and your Family.`,
+      },
+      {
+        image:'travel.png',
+        title:'Travel Insurance',
+        textOne:`Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.`,
+        textTwo:`Discover the most appropriate fit for you and your Family.`,
+      },
+    ] ;  
 
 mixin Service(config)
   .col-sm-6.col-md-3.mb-6
     img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='50' alt='...')
     h4.mt-4.fw-normal.text-200=config.title
     p.mb-md-0=config.text
+
 mixin Icons(config)
   .icon-box
-    img.car-insurance-icon(src=`${CWD}assets/img/icons/${config.image}` width="60"  alt='...' )  
-    img.car-insurance-icon-hover(src=`${CWD}assets/img/icons/${config.hoverImage}` width="60" alt='...' )
+    img.car-insurance-icon(src=`${CWD}assets/img/icons/${config.image}`   alt='...' )  
+    img.car-insurance-icon.car-insurance-icon-hover(src=`${CWD}assets/img/icons/${config.hoverImage}`  alt='...' )
+
+mixin TabContent(config)
+  .col-md-6.col-xl-4.order-1.order-md-0
+    h2.text-light.mb-md-5=config.title
+    p.text-400!=config.textOne
+    p.text-400.mt-3!=config.textTwo
+    a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
+      span.fas.fa-chevron-right.fa-xs.btn-icon
+      span.btn-text Learn more  
+  .col-md-6.col-xl-8.text-end
+    .img-shape
+      img.feature-img(src=`${CWD}assets/img/gallery/${config.image}` alt='...')
 
 mixin CarInsurance
   section.overflow-hidden
     +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
     +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
     .container-lg
-      .row.flex-center.py-md-10
+      .row.flex-center.py-8.py-md-10
         .col-12.mt-6
           .d-flex.align-items-start
             .nav.flex-column.nav-tab#nav-tab(role='tablist' aria-orientation='vertical')
-              btn.circle-hover-wrapper.nav-link.mb-4.active#nav-car-tab(data-bs-toggle='tab' data-bs-target='#nav-car' type='button' role='tab' aria-controls='nav-car' aria-selected='true') 
+              btn.circle-hover-wrapper.nav-link.mb-lg-4.active#nav-car-tab(data-bs-toggle='tab' data-bs-target='#nav-car' type='button' role='tab' aria-controls='nav-car' aria-selected='true') 
                 +Icons(insurance[0])
                  
-              btn.circle-hover-wrapper.nav-link.mb-4#nav-home-tab(data-bs-toggle='tab' data-bs-target='#nav-home' type='button' role='tab' aria-controls='nav-home' aria-selected='false') 
+              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-home-tab(data-bs-toggle='tab' data-bs-target='#nav-home' type='button' role='tab' aria-controls='nav-home' aria-selected='false') 
                 +Icons(insurance[1])
 
-              btn.circle-hover-wrapper.nav-link.mb-4#nav-paw-tab(data-bs-toggle='tab' data-bs-target='#nav-paw' type='button' role='tab' aria-controls='nav-paw' aria-selected='false') 
+              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-paw-tab(data-bs-toggle='tab' data-bs-target='#nav-paw' type='button' role='tab' aria-controls='nav-paw' aria-selected='false') 
                 +Icons(insurance[2])
 
-              btn.circle-hover-wrapper.nav-link.mb-4#nav-plane-tab(data-bs-toggle='tab' data-bs-target='#nav-plane' type='button' role='tab' aria-controls='nav-plane' aria-selected='false') 
+              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-plane-tab(data-bs-toggle='tab' data-bs-target='#nav-plane' type='button' role='tab' aria-controls='nav-plane' aria-selected='false') 
                 +Icons(insurance[3])
                   
-            .tab-content#nav-tabContent
+            .tab-content#nav-tabContent.w-100
               .tab-pane.fade.show.active#nav-car(role='tabpanel' aria-labelledby='nav-car-tab') 
-                .row.align-items-center.offset-1.g-5
-                  .col-md-6.col-xl-4.order-1.order-lg-0
-                    h2.text-light.mb-md-5 Car Insurance
-                    p.text-400 Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
-                      br
-                      .mt-3.text-400 Discover the most appropriate fit for you and your Family.
-                    a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
-                      span.fas.fa-chevron-right.fa-xs.btn-icon
-                      span.btn-text Learn more  
-                  .col-md-6.col-xl-8.text-end
-                    .img-shape
-                      img.feature-img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+                .row.align-items-center.offset-sm-1.g-5
+                  +TabContent(content[0])
               .tab-pane.fade#nav-home(role='tabpanel' aria-labelledby='nav-home-tab') 
                 .row.align-items-center.offset-1 
-                  .col-6
-                    h2.text-light Car Insurance
-                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
-                      |Discover the most appropriate fit for you and your Family.
-                  .col-6
-                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+                  +TabContent(content[1])
               .tab-pane.fade#nav-paw(role='tabpanel' aria-labelledby='nav-paw-tab')
-                .row.align-items-center.offset-1
-                  .col-6
-                    h2.text-light Car Insurance
-                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
-                      |Discover the most appropriate fit for you and your Family.
-                  .col-6
-                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+                .row.align-items-center.offset-1 
+                  +TabContent(content[2])
               .tab-pane.fade#nav-plane(role='tabpanel' aria-labelledby='nav-plane-tab') 
                 .row.align-items-center.offset-1 
-                  .col-6
-                    h2.text-light Car Insurance
-                    p Make a plan for the emergence of life. We protect your most precious assets, allowing you to devote your time and energy to more essential things in life.
-                      |Discover the most appropriate fit for you and your Family.
-                  .col-6
-                    img(src=`${CWD}assets/img/gallery/car.png` alt='...')
+                  +TabContent(content[3])
 
       .row.offset-xl-2
         .col-xl-12
