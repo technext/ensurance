@@ -53,15 +53,6 @@
   margin-right: -$card-spacer-x !important;
 }
 
-.card-span{
-  transition: all 0.4s ease;
-  border:0;
-  .card-span-img{
-    position: absolute;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-}
 .card-img,
 .card-img-top {
   @include border-top-radius(0);
@@ -107,4 +98,4 @@
 .card-soft-primary{
   background: rgba(24, 107, 232, 0.08);
   border: 1px solid rgba(24, 107, 232, 0.4);
-}
+} 

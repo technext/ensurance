@@ -24,12 +24,12 @@ append variables
       {
         icon:'support.png',
         title:'24x7 Support',
-        text:'Choose the location where your food will be delivered.'
+        text:`Client is our most <br> important priority`,
       },
       {
         icon:'edit.png',
         title:'Easy Claim System',
-        text:'Check over hundreds of menus to pick your favorite food'
+        text:`Express your desires <br>and needs to us`
       },
       {
         icon:'money.png',
@@ -73,10 +73,10 @@ append variables
     ] ;  
 
 mixin Service(config)
-  .col-sm-6.col-md-3.mb-6
-    img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='50' alt='...')
+  .col-sm-6.col-md-3.mb-6.text-center.text-sm-start
+    img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='60' alt='...')
     h4.mt-4.fw-normal.text-200=config.title
-    p.mb-md-0=config.text
+    p.text-400.mb-md-0!=config.text
 
 mixin Icons(config)
   .icon-box
@@ -96,7 +96,7 @@ mixin TabContent(config)
       img.feature-img(src=`${CWD}assets/img/gallery/${config.image}` alt='...')
 
 mixin CarInsurance
-  section.overflow-hidden
+  section
     +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
     +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
     .container-lg
@@ -118,22 +118,22 @@ mixin CarInsurance
                   
             .tab-content#nav-tabContent.w-100
               .tab-pane.fade.show.active#nav-car(role='tabpanel' aria-labelledby='nav-car-tab') 
-                .row.align-items-center.offset-sm-1.g-5
+                .row.align-items-center.offset-sm-1.g-3
                   +TabContent(content[0])
               .tab-pane.fade#nav-home(role='tabpanel' aria-labelledby='nav-home-tab') 
-                .row.align-items-center.offset-1 
+                .row.align-items-center.offset-sm-1.g-3
                   +TabContent(content[1])
               .tab-pane.fade#nav-paw(role='tabpanel' aria-labelledby='nav-paw-tab')
-                .row.align-items-center.offset-1 
+                .row.align-items-center.offset-sm-1.g-3 
                   +TabContent(content[2])
               .tab-pane.fade#nav-plane(role='tabpanel' aria-labelledby='nav-plane-tab') 
-                .row.align-items-center.offset-1 
+                .row.align-items-center.offset-sm-1.g-3
                   +TabContent(content[3])
 
       .row.offset-xl-2
         .col-xl-12
           .mb-3.mb-md-5
-            h2.text-light Best Services
+            h2.text-light.mb-7.text-center.text-sm-start Best Services
           .row
             each service in services 
               +Service(service)                    

@@ -486,6 +486,13 @@ $breadcrumb-divider: quote('/') !default;
 //|   Carousel
 //-----------------------------------------------*/
 $carousel-transition-duration: 0.8s !default;
+$carousel-control-color:             $primary !default;
+$carousel-control-width:             5% !default;
+
+$carousel-indicator-width:           40px !default;
+$carousel-indicator-spacer:          0 !default;
+$carousel-indicator-active-bg:       $primary !default;
+
 
 // /*-----------------------------------------------
 //|   Spinner

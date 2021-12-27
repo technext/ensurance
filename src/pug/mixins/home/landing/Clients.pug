@@ -1,21 +1,23 @@
 mixin Client(config)
   .col-12
-    .card.card-span.text-white
-      .card-body.py-5.px-0
-        .d-md-flex.align-items-md-center.text-center.text-md-start(style="border-radius: 250px 0 0 250px; background-color:#186be87d")
-          img.img-fluid.me-4.me-md-3.me-lg-4.rounded-circle.fit-cover(src=`${CWD}assets/img/team/${config.userImage}` width="250" alt='')
-          .w-md-75.py-5.px-9
+    .card.testimonial-bg.card-span.text-white.mt-10.mt-md-7.mt-lg-8.mx-4.mx-md-0
+      .card-body.pt-0.p-md-0
+        .d-flex.flex-column.flex-md-row.align-items-center
+          .card-span-img
+            .circle-wrapper
+              img.rounded-circle.w-100(src=`${CWD}assets/img/team/${config.userImage}`  alt='')
+          .mt-n6.mt-md-0.text-center.text-md-start.px-xl-10.px-md-6
             h2.mb-0.fw-medium.text-white=config.name
             p.fw-normal.mb-0.text-primary=config.designation
             p.card-text.text-200.mt-3=config.text
 
 mixin Clients 
-  +Section('container-fluid pe-0').py-8.overflow-hidden
-    .row 
-      .col-12.col-xl-10.offset-2
+  +Section('container-fluid px-0').py-8
+    .row.g-0 
+      .col-12.col-xxl-11.offset-xxl-1
         h2.text-light.text-center Our Awesome Clients
-        #carouselExampleIndicators.carousel.slide(data-bs-ride='carousel')
-          .carousel-inner
+        #carouselExampleIndicators.carousel.slide(data-bs-ride='carouse')
+          .carousel-inner.ps-md-5.ps-lg-11.py-4.pb-lg-9
             .carousel-item.active
               .row.h-100
                 +Client({userImage: '1.jpg', title:'What our customer are saying',name:'Charlize Theron',designation:'Founder Circle',text:'“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”',})            

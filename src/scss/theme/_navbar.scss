@@ -1,9 +1,24 @@
 /*-----------------------------------------------
 |   Navigation bar
 -----------------------------------------------*/
-.navbar {
+.navbar-nav {
   font-weight: $font-weight-bold;
   font-size: $navbar-font-size;
   letter-spacing: 0.01em;
   transition: $transition-base;
+  .nav-link {
+    &.active {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: '';
+        height: 7px;
+        width: 7px;
+        border-radius: 50%;
+        left: -5px;
+        top: 13px;
+        background: $primary;
+      }
+    }
+  }
 }

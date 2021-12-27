@@ -67,8 +67,6 @@
     &:hover{
       z-index: 800;
       &::before{
-        position: absolute;
-        content: '';
         height: 100%;
         width: 100%;
         transform: scale(2);
@@ -76,4 +74,5 @@
     }
   }
 }
+
 
