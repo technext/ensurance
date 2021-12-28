@@ -88,9 +88,12 @@ mixin TabContent(config)
     h2.text-light.mb-md-5=config.title
     p.text-400!=config.textOne
     p.text-400.mt-3!=config.textTwo
-    a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
+    a.btn.btn-primary.btn-ensurance.mt-5(href='#!')
       span.fas.fa-chevron-right.fa-xs.btn-icon
-      span.btn-text Learn more  
+      span.btn-text Learn more
+    //- a.btn.btn-primary.btn-ensurance.my-md-5(href='#!')
+    //-   span.fas.fa-chevron-right.fa-xs.btn-icon
+    //-   span.btn-text Learn more  
   .col-md-6.col-xl-8.text-end
     .img-shape
       img.feature-img(src=`${CWD}assets/img/gallery/${config.image}` alt='...')
@@ -99,6 +102,7 @@ mixin CarInsurance
   section#products
     +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
     +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
+    +Background({ image: `${CWD}assets/img/illustrations/circle.png`, attrs: { style: { 'background-position': '18% 49%;', 'background-size': 'auto'} }, className: 'd-none d-xl-block  mt-11' })
     .container-lg
       .row.flex-center.py-8.py-md-10
         .col-12.mt-6
@@ -135,6 +139,5 @@ mixin CarInsurance
           .mb-3.mb-md-5
             h2.text-light.mb-7.text-center.text-sm-start Best Services
           .row
-            +Background({ image: `${CWD}assets/img/illustrations/circle.png`, attrs: { style: { 'background-position': 'left', 'background-size': 'auto'} }, className: 'd-none d-xl-block  mt-11' })
             each service in services 
               +Service(service)                    
