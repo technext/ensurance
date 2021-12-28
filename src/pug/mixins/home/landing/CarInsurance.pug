@@ -73,7 +73,7 @@ append variables
     ] ;  
 
 mixin Service(config)
-  .col-sm-6.col-md-3.mb-6.text-center.text-sm-start
+  .col-sm-6.col-lg-3.mb-6.text-center.text-sm-start
     img.shadow-icon(src=`${CWD}assets/img/icons/${config.icon}` height='60' alt='...')
     h4.mt-4.fw-normal.text-200=config.title
     p.text-400.mb-md-0!=config.text
@@ -96,7 +96,7 @@ mixin TabContent(config)
       img.feature-img(src=`${CWD}assets/img/gallery/${config.image}` alt='...')
 
 mixin CarInsurance
-  section
+  section#products
     +Background({ image: `${CWD}assets/img/illustrations/bg-car-insurance.png`, attrs: { style: { 'background-position': '0 200px', 'background-size': '100% 45%'} }, className: 'd-none d-md-block' })
     +Background({ image: `${CWD}assets/img/illustrations/bg-left.png`, attrs: { style: { 'background-position': 'left', 'background-size': '15% 100%'} }, className: 'd-none d-md-block' })
     .container-lg
@@ -104,16 +104,16 @@ mixin CarInsurance
         .col-12.mt-6
           .d-flex.align-items-start
             .nav.flex-column.nav-tab#nav-tab(role='tablist' aria-orientation='vertical')
-              btn.circle-hover-wrapper.nav-link.mb-lg-4.active#nav-car-tab(data-bs-toggle='tab' data-bs-target='#nav-car' type='button' role='tab' aria-controls='nav-car' aria-selected='true') 
+              a.circle-hover-wrapper.nav-link.mb-lg-4.active#nav-car-tab( href="#!" data-bs-toggle='tab' data-bs-target='#nav-car'  role='tab' aria-controls='nav-car' aria-selected='true') 
                 +Icons(insurance[0])
                  
-              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-home-tab(data-bs-toggle='tab' data-bs-target='#nav-home' type='button' role='tab' aria-controls='nav-home' aria-selected='false') 
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-home-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-home'  role='tab' aria-controls='nav-home' aria-selected='false') 
                 +Icons(insurance[1])
 
-              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-paw-tab(data-bs-toggle='tab' data-bs-target='#nav-paw' type='button' role='tab' aria-controls='nav-paw' aria-selected='false') 
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-paw-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-paw'  role='tab' aria-controls='nav-paw' aria-selected='false') 
                 +Icons(insurance[2])
 
-              btn.circle-hover-wrapper.nav-link.mb-lg-4#nav-plane-tab(data-bs-toggle='tab' data-bs-target='#nav-plane' type='button' role='tab' aria-controls='nav-plane' aria-selected='false') 
+              a.circle-hover-wrapper.nav-link.mb-lg-4#nav-plane-tab(  href="#!" data-bs-toggle='tab' data-bs-target='#nav-plane'  role='tab' aria-controls='nav-plane' aria-selected='false') 
                 +Icons(insurance[3])
                   
             .tab-content#nav-tabContent.w-100
@@ -131,9 +131,10 @@ mixin CarInsurance
                   +TabContent(content[3])
 
       .row.offset-xl-2
-        .col-xl-12
+        .col-12
           .mb-3.mb-md-5
             h2.text-light.mb-7.text-center.text-sm-start Best Services
           .row
+            +Background({ image: `${CWD}assets/img/illustrations/circle.png`, attrs: { style: { 'background-position': 'left', 'background-size': 'auto'} }, className: 'd-none d-xl-block  mt-11' })
             each service in services 
               +Service(service)                    

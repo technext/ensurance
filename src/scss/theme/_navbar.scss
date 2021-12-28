@@ -2,7 +2,7 @@
 |   Navigation bar
 -----------------------------------------------*/
 .navbar-nav {
-  font-weight: $font-weight-bold;
+  font-weight: $font-weight-normal;
   font-size: $navbar-font-size;
   letter-spacing: 0.01em;
   transition: $transition-base;
@@ -15,8 +15,8 @@
         height: 7px;
         width: 7px;
         border-radius: 50%;
-        left: -5px;
-        top: 13px;
+        left: -10px;
+        top: 16px;
         background: $primary;
       }
     }

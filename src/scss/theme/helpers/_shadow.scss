@@ -2,7 +2,7 @@
 	position: relative;
 	display: inline-block;
 
-	@include media-breakpoint-up(sm) {
+	@include media-breakpoint-up(xl) {
 		&::before {
 			position: absolute;
 			content: '';
@@ -10,7 +10,7 @@
 			left: -1.5rem;
 			height: 10.125rem;
 			width: 11rem;
-			border-radius: 1.125rem;
+			border-radius: 3.125rem;
 			z-index: -1 !important;
 			opacity: .3;
 			background-image: linear-gradient(200deg, rgba(24, 107, 232, 1),rgba(24, 107, 232, 1));
@@ -20,47 +20,13 @@
 			content: '';
 			height: 10.125rem;
 			width: 11rem;
-			border-radius: 1.125rem;
+			border-radius: 3.125rem;
 			z-index: -1 !important;
-			top: 43%;
-			left: 53%;
+			top: 15.3rem;
+			left: 25rem;
 			border: 1px solid #186BE8;
 			opacity: .5;
 			background: transparent;
-		}
-	}
-
-	@include media-breakpoint-up(md) {
-		&::before {
-			height: 10.125rem;
-			width: 11rem;
-			top: -2.5rem;
-			left: -2.5rem;
-      border-radius: 1.125rem;
-    }
-		// &::after {
-		// 	height: 10.125rem;
-		// 	width: 11rem;
-		// 	border-radius: 1.125rem;
-		// 	top: 7rem;
-		// 	left: 13rem;
-		// }
-	}
-
-	@include media-breakpoint-up(xl) {
-		&::before {
-			height: 15.125rem;
-      width: 16rem;
-			top: -2.5rem;
-			left: -2.5rem;
-      border-radius: 3.125rem;
-    }
-		&::after {
-			height: 15.125rem;
-      width: 16rem;
-			border-radius: 3.125rem;
-			top: 11rem;
-			left: 21rem;
 		}
 	}
 } 

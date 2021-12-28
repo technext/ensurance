@@ -16,14 +16,23 @@
     transform: scale(1.2);
     opacity: .3;
   }
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(md) {
     height: 250px;
     width: 250px;
+    &::before{
+    height: 100%;
+    width: 100%;  
+    transform: scale(1.2);
+    }
+  } 
+  @include media-breakpoint-up(xl) {
+    // height: 250px;
+    // width: 250px;
     &::before{
     transform: scale(1.5);
     }
   } 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(xxl) {
     height: 350px;
     width: 350px;
     &::before{
@@ -36,7 +45,11 @@
 .testimonial-bg{
   background-color: #186be87d;
   @include media-breakpoint-up(md) {
-    min-height: 350px;
+    max-height: 250px;
+    border-radius: 220px 0 0 220px;
+  }
+  @include media-breakpoint-up(xxl) {
+    max-height: 350px;
     border-radius: 220px 0 0 220px;
   }
 }

@@ -1,6 +1,23 @@
 /*-----------------------------------------------
 |   Form
 -----------------------------------------------*/
+.form-floating {
+  position: relative;
+
+  > label{
+    font-size: map_get($font-sizes, '1');
+    color: $gray-500;
+    padding: 1rem 0;
+  }
+  > .form-control{
+    &:focus{
+       + label{
+        color: $white;
+      }
+    }
+  }
+}
+
 .form-search-control{
   padding: .5rem .5rem;
 }
@@ -62,10 +79,7 @@
     color: $gray-500;
     border-bottom: 1px solid #5edcd4c7;
   }
-  label{
-    font-size: map_get($font-sizes, '1');
-    color: $gray-500;
-  }
+ 
   
 }
 

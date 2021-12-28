@@ -4874,7 +4874,7 @@ textarea.form-control-lg {
   min-width: 10rem;
   padding: 1rem 0;
   margin: 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: var(--ensurance-dropdown-color);
   text-align: right;
   list-style: none;
@@ -19904,8 +19904,8 @@ ul {
 |   Navigation bar
 -----------------------------------------------*/
 .navbar-nav {
-  font-weight: 700;
-  font-size: 0.8rem;
+  font-weight: 400;
+  font-size: 1rem;
   letter-spacing: 0.01em;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -19920,8 +19920,8 @@ ul {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  right: -5px;
-  top: 13px;
+  right: -10px;
+  top: 16px;
   background: #5EDCD4;
 }
 
@@ -21462,7 +21462,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   position: relative;
   display: inline-block;
 }
-@media (min-width: 540px) {
+@media (min-width: 1140px) {
   .img-shape::before {
     position: absolute;
     content: "";
@@ -21470,7 +21470,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     right: -1.5rem;
     height: 10.125rem;
     width: 11rem;
-    border-radius: 1.125rem;
+    border-radius: 3.125rem;
     z-index: -1 !important;
     opacity: 0.3;
     background-image: -o-linear-gradient(-250deg, #186be8, #186be8);
@@ -21481,38 +21481,13 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     content: "";
     height: 10.125rem;
     width: 11rem;
-    border-radius: 1.125rem;
+    border-radius: 3.125rem;
     z-index: -1 !important;
-    top: 43%;
-    right: 53%;
+    top: 15.3rem;
+    right: 25rem;
     border: 1px solid #186BE8;
     opacity: 0.5;
     background: transparent;
-  }
-}
-@media (min-width: 720px) {
-  .img-shape::before {
-    height: 10.125rem;
-    width: 11rem;
-    top: -2.5rem;
-    right: -2.5rem;
-    border-radius: 1.125rem;
-  }
-}
-@media (min-width: 1140px) {
-  .img-shape::before {
-    height: 15.125rem;
-    width: 16rem;
-    top: -2.5rem;
-    right: -2.5rem;
-    border-radius: 3.125rem;
-  }
-  .img-shape::after {
-    height: 15.125rem;
-    width: 16rem;
-    border-radius: 3.125rem;
-    top: 11rem;
-    right: 21rem;
   }
 }
 
@@ -21569,6 +21544,17 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 /*-----------------------------------------------
 |   Form
 -----------------------------------------------*/
+.form-floating {
+  position: relative;
+}
+.form-floating > label {
+  color: #76979E;
+  padding: 1rem 0;
+}
+.form-floating > .form-control:focus + label {
+  color: #fff;
+}
+
 .form-search-control {
   padding: 0.5rem 0.5rem;
 }
@@ -21624,9 +21610,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
   background-color: transparent;
   color: #76979E;
   border-bottom: 1px solid #5edcd4c7;
-}
-.form-ensurance-header-control label {
-  color: #76979E;
 }
 
 .popover {
@@ -21815,6 +21798,16 @@ iframe.yt-video.loaded {
   text-align: center;
 }
 
+.hero-header-form {
+  margin-top: 3rem;
+  border: 1px solid rgba(94, 220, 212, 0.39);
+}
+@media (min-width: 540px) {
+  .hero-header-form {
+    margin-top: 10rem;
+  }
+}
+
 .feature-img {
   max-width: 100%;
   height: auto;
@@ -21939,18 +21932,27 @@ iframe.yt-video.loaded {
   transform: scale(1.2);
   opacity: 0.3;
 }
-@media (min-width: 960px) {
+@media (min-width: 720px) {
   .circle-wrapper {
     height: 250px;
     width: 250px;
   }
+  .circle-wrapper::before {
+    height: 100%;
+    width: 100%;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+@media (min-width: 1140px) {
   .circle-wrapper::before {
     -webkit-transform: scale(1.5);
     -ms-transform: scale(1.5);
     transform: scale(1.5);
   }
 }
-@media (min-width: 1140px) {
+@media (min-width: 1440px) {
   .circle-wrapper {
     height: 350px;
     width: 350px;
@@ -21967,7 +21969,13 @@ iframe.yt-video.loaded {
 }
 @media (min-width: 720px) {
   .testimonial-bg {
-    min-height: 350px;
+    max-height: 250px;
+    border-radius: 0 220px 220px 0;
+  }
+}
+@media (min-width: 1440px) {
+  .testimonial-bg {
+    max-height: 350px;
     border-radius: 0 220px 220px 0;
   }
 }

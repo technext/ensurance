@@ -37,7 +37,7 @@ mixin NewsCard(config)
             path(fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z')
        
 mixin RcentNews 
-  +Section 
+  +Section#news
     .row
       h2.text-light.text-center.my-5 Recent News
     .row.flex-center.h-100.circle-blend.circle-blend-left.circle-primary
@@ -45,7 +45,7 @@ mixin RcentNews
         .row.align-items-center.circle-blend.circle-blend-right.circle-warning
           each item in news
             +NewsCard(item)
-          .col.my-5.text-end
-            a.link-primary.text-end(href='#!') View all 
-              svg.bi.bi-arrow-right(xmlns='http://www.w3.org/2000/svg' width='21' height='21' fill='currentColor' viewBox='0 0 16 16')
-                path(fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z')
+        .my-5.text-center.text-sm-end
+          a.link-primary(href='#!') View all 
+            svg.bi.bi-arrow-right(xmlns='http://www.w3.org/2000/svg' width='21' height='21' fill='currentColor' viewBox='0 0 16 16')
+              path(fill-rule='evenodd' d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z')     

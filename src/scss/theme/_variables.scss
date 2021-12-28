@@ -326,7 +326,7 @@ $navbar-light-active-color: var(--#{$variable-prefix}navbar-light-active-color) 
 $navbar-light-disabled-color: var(--#{$variable-prefix}navbar-light-disabled-color) !default;
 $navbar-light-toggler-border-color: var(--#{$variable-prefix}navbar-light-toggler-border-color) !default;
 
-$navbar-font-size: $font-size-base * 0.8 !default;
+$navbar-font-size: $font-size-base  !default;
 $navbar-padding-y: map_get($spacers, 2) !default;
 $navbar-padding-x: $spacer !default;
 
